@@ -24,7 +24,7 @@ public class Main {
         // Descuento: 2550*0.15 = 382.50
         // Impuestos (Tras descuento) (2550-382.5)*0.21 = 455.17
         // Total tras impuestos = 2550-382.5+455.175 = 2622.675
-        System.out.println("Total de la compra con impuestos y descuento: $" + totalCompra);
+        System.out.println("Total de la compra con impuestos y descuento: $" + String.format("%.3f", totalCompra));
     }
 
     // Calcula el total de una compra en base a los productos y cantidades
@@ -40,8 +40,8 @@ public class Main {
 
     // Calcula el subtotal de la compra
     public static double calcularSubtotal(List<String> productos, List<Double> precios, int[] cantidades) {
-        double subtotal = 0;
-        for (int i = 0; i <= productos.size(); i++) {
+        float subtotal = 0;
+        for (int i = 0; i < productos.size(); i++) {
             // Error de control: verificar si la cantidad es mayor que cero
             subtotal += precios.get(i) * cantidades[i];
         }
@@ -67,6 +67,6 @@ public class Main {
     public static double calcularImpuestos(double total) {
         final double IMPUESTO = 0.21; // Impuesto del 21%
         // Error lógico: no se aplica correctamente el cálculo
-        return total * IMPUESTO; // Debe devolver total + impuestos
+        return total + (total * IMPUESTO); // Debe devolver total + impuestos
     }
 }
