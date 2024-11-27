@@ -34,8 +34,7 @@ public class Main {
         double totalConDescuento = subtotal - descuento;
 
         // Error lógico: no se aplica correctamente la función calcularImpuestos
-        double totalConImpuestos = calcularImpuestos(totalConDescuento);
-        return totalConImpuestos;
+        return calcularImpuestos(totalConDescuento);
     }
 
     // Calcula el subtotal de la compra
